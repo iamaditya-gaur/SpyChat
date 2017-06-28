@@ -1,20 +1,21 @@
-"""
-Written by :    Aditya Gaur
-"""
-
-print "Hello!"
-# backslash for scaping characters
-print ('what\'s up')
-
-print "Let's get started"
-
 # WE ARE GOING TO IMPORT THE spy_details FILE HERE
 from spy_details import spy,Spy,friends,ChatMessage
 from steganography.steganography import Steganography
 from datetime import datetime
 
+print ("\033[91m               @@@@@@   @@@@@@@   @@@ @@@   @@@@@@@  @@@  @@@   @@@@@@   @@@@@@@")
+print ("\033[91m              @@@@@@@   @@@@@@@@  @@@ @@@  @@@@@@@@  @@@  @@@  @@@@@@@@  @@@@@@@")
+print ("\033[91m              !@@       @@!  @@@  @@! !@@  !@@       @@!  @@@  @@!  @@@    @@!")
+print ("\033[91m              !@!       !@!  @!@  !@! @!!  !@!       !@!  @!@  !@!  @!@    !@!")
+print ("\033[91m              !!@@!!    @!@@!@!    !@!@!   !@!       @!@!@!@!  @!@!@!@!    @!!")
+print ("\033[91m               !!@!!!   !!@!!!      @!!!   !!!       !!!@!!!!  !!!@!!!!    !!!")
+print ("\033[91m                   !:!  !!:         !!:    :!!       !!:  !!!  !!:  !!!    !!:")
+print ("\033[91m                  !:!   :!:         :!:    :!:       :!:  !:!  :!:  !:!    :!:")
+print ("\033[91m              :::: ::    ::          ::     ::: :::  ::   :::  ::   :::     ::")
+print ("\033[91m              :: : :     :           :      :: :: :   :   : :   :   : :     :")
+print ("\n\033[94m        -------------- Because coventional texting is so mainstream --------------")
 
-STATUS_MESSAGE = ['Status 1' , 'Class is ongoing' , 'Building a chat application']
+STATUS_MESSAGE = ['Shaken, not stirred' , 'Eternally Optimistic' , 'My blood is a flood of rubies']
 #FUNCTION TO VALIDATE THE NAME FIELD
 def name_valid(nme):
     # return True if valid name else False
@@ -48,7 +49,7 @@ def add_friend():
         friends.append(new_friend)
         print("\nYour friend has been added.")
     else:
-        print("\nWrong Entry!\tWe can't add the spy with the details you provided.")
+        print("\n\033[1;34m     Wrong Entry!\tWe can't add the spy with the details you provided.   \033[1m;34m")
 
     return len(friends)
 
@@ -67,11 +68,11 @@ def select_friend():
         if(len(friends) >= friend_selection):
             print("\nYou selected %s %s ") %(friends[friend_selection].salutation , friends[friend_selection].name)
         else:
-            print("WRONG SELECTION! SELECT A VALID OPTION!")
+            print("\033[1;34m   WRONG SELECTION! SELECT A VALID OPTION!     \033[1m;34m")
 
         return (friend_selection)
     except ValueError:
-        print("Please enter a correct value for the input!!")
+        print("\033[1;34m   Please enter a correct value for the input!!    \033[1m;34m")
         return (False)
 
 # FUCNCTION TO SEND A MESSAGE
@@ -84,7 +85,7 @@ def send_message():
             text = raw_input("Enter secret text that you want to encode : ")
             if name_valid(text) is True:
                 if len(text.split()) > 100 :
-                    print ("You're speaking a lot, this is Intolerable!!\nYou're banished from the chat!!")
+                    print ("\033[1;34m  You're speaking a lot, this is Intolerable!!\nYou're banished from the chat!!   \033[1m;34m")
                     del friends[friend_select]
                 else:
                     Steganography.encode(input_path , output_path , text)
@@ -94,10 +95,10 @@ def send_message():
 
                     print("Your secret image is ready !")
             else:
-                print ("You haven't entered any secret message. Please try again!")
+                print ("\033[1;34m      You haven't entered any secret message. Please try again!   \033[1m;34m")
 
     except IOError:
-        print("No such file or directory found!!\nEnter a valid path and try again!!")
+        print("\033[1;34m   No such file or directory found!!\nEnter a valid path and try again!!   \033[1m;34m")
 
 #FUNCTION TO DECODE A MESSAGE
 def read_message():
@@ -117,7 +118,7 @@ def read_message():
 
 
     except IOError:
-        print("No such file or directory found!!\nEnter a valid path and try again!!")
+        print("\033[1;34m   No such file or directory found!!\nEnter a valid path and try again!!   \033[1m;34m")
 
 # FUNCTION TO READ CHAT HISTORY FROM A FRIEND
 def read_chat_history():
@@ -164,18 +165,18 @@ def add_status():
 
 
         else:
-            print('\n WRONG CHOICE INPUT! \n KINDLY SELECT Y/N')
+            print('\n \033[1;34m    WRONG CHOICE INPUT! \n KINDLY SELECT Y/N    \033[1m;34m')
 
 
 
     else:
-        print("\nWRONG CHOICE INPUT! \n KINDLY SELECT Y/N")
+        print("\n   \033[1;34m  WRONG CHOICE INPUT! \n KINDLY SELECT Y/N    \033[1m;34m")
 
     if updated_status_message != None:
 
         print("\nYour current status message is : %s") % (updated_status_message)
     else:
-        print("\nYou currently don't have any status message set.")
+        print("\n   \033[1;34m  You currently don't have any status message set.    \033[1m;34m")
 
 # CREATING A FUNCTION TO USE IT AGAIN AND AGAIN THAT PERFORMS OUR MAIN OPERATN
 
@@ -210,13 +211,13 @@ def start_chat(spy):
                     elif menu_choice == 6:
                         show_menu = False
                     else:
-                        print("Invalid choice input!")
+                        print(" \033[1;34m  Invalid choice input!   \033[1m;34m")
                         show_menu = False
         except ValueError:
-            print("Please enter a correct value for the input!!")
+            print("\033[1;34m   Please enter a correct value for the input!!    \033[1m;34m")
 
     else:
-        print("Sorry! You are not of corect age to be a spy, come back later!! ")
+        print("\033[1;34m   Sorry! You are not of corect age to be a spy, come back later!!     \033[1m;34m")
 
 
 
